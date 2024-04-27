@@ -1,3 +1,14 @@
-<!-- <app-add-screen></app-add-screen> -->
-<!-- <app-score-screen></app-score-screen> -->
-<app-main-screen></app-main-screen>
+
+
+<div *ngIf="currentScreen === 'main'">
+  <app-main-screen (goToScoreScreen)="showScoreScreen()"></app-main-screen>
+</div>
+
+<div *ngIf="currentScreen === 'score'">
+  <app-score-screen (goToMainScreen)="showMainScreen()" (goToAddScreen)="showAddScreen()"></app-score-screen>
+</div>
+
+<div *ngIf="currentScreen === 'add'">
+  <app-add-screen (goToScoreScreen)="showScoreScreen()"></app-add-screen>
+</div>
+

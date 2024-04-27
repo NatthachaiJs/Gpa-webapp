@@ -1,5 +1,8 @@
 <form class="form">
+    <div class="topheader">    <button class="backbtn" (click)="goToMain()">Back</button>
     <p class="title"> Student Score</p>
+</div>
+
   
     <div>
         <label class="item">
@@ -7,7 +10,7 @@
             <button class="del">del</button>
         </label>
     </div>
-    <button class="submit">+</button>
+    <button class="submit" (click)="goToAdd()">+</button>
   </form>
   
 

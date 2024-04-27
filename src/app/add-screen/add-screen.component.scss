@@ -12,11 +12,26 @@
     color: #fff;
     border: 1px solid #333;
   }
+  .backbtn{
+    background-color: #c05454;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .topheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+  }
   
   .title {
     font-size: 28px;
     font-weight: 600;
-    letter-spacing: -1px;
+    padding-left: 20px;
     position: relative;
     text-align: center;
     color: #00bfff;

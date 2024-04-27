@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-main-screen',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-screen.component.scss']
 })
 export class MainScreenComponent {
+  @Output() goToScoreScreen = new EventEmitter<void>();
 
+  goToScore() {
+    this.goToScoreScreen.emit();
+  }
+  
 }
