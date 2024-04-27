@@ -2,14 +2,15 @@
     <div class="topheader">    <button class="backbtn" (click)="goToMain()">Back</button>
     <p class="title"> Student Score</p>
 </div>
-
-  
-    <div>
-        <label class="item">
-            <span class="name">name</span>
-            <button class="del">del</button>
-        </label>
+<div class="student-list-container">
+    <div *ngFor="let student of getStudentData()" class="item">
+      <span class="name">{{ student.name }}</span>
+      <span class="score">Score: {{ student.totalScore }}</span>
+      <span class="grade">Grade: {{ student.grade }}</span>
+      <button class="del" (click)="deleteStudent(student)">Delete</button>
     </div>
+  </div>
+
     <button class="submit" (click)="goToAdd()">+</button>
   </div>
   

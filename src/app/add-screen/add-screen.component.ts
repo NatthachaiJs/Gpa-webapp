@@ -1,38 +1,15 @@
-import { Component, EventEmitter, Output ,OnInit} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-add-screen',
   templateUrl: './add-screen.component.html',
   styleUrls: ['./add-screen.component.scss']
 })
-export class AddScreenComponent implements OnInit{
+export class AddScreenComponent {
   @Output() goToScoreScreen = new EventEmitter<void>();
   collectScore: number = 0; // Initialize with 0
   testScore: number = 0;
   name: string = '';
-  constructor() { }
-
-  ngOnInit() {
-    // Check if data already exists in local storage
-    const existingData = localStorage.getItem('studentData');
-    if (!existingData) {
-      // Mockup data for 10 people
-      const mockData = [
-        { "name": "John", "totalScore": 82, "grade": "B" },
-        { "name": "Emma", "totalScore": 75, "grade": "C" },
-        { "name": "Michael", "totalScore": 91, "grade": "A" },
-        { "name": "Sophia", "totalScore": 65, "grade": "D" },
-        { "name": "William", "totalScore": 78, "grade": "C" },
-        { "name": "Olivia", "totalScore": 88, "grade": "B" },
-        { "name": "James", "totalScore": 70, "grade": "C" },
-        { "name": "Ava", "totalScore": 95, "grade": "A" },
-        { "name": "Robert", "totalScore": 60, "grade": "F" },
-        { "name": "Isabella", "totalScore": 84, "grade": "B" }
-      ];
-      
-      // Save mockup data to local storage
-      localStorage.setItem('studentData', JSON.stringify(mockData));
-    }
-  }
+  
 
   checkCollectScore() {
     if (this.collectScore > 30) {

@@ -2,22 +2,19 @@
     <p class="title">Top 3</p>
   
     <div>
-        <label class="item">
-            <span class="name">name</span>
-            <span class="name">name</span>
-            <span class="name">name</span>
-        </label>
+      <label class="item">
+        <span *ngFor="let student of calculateTop3Students()" class="name">
+            Name: {{ student.name }} {{student.totalScore}} Grade:{{student.grade}}</span>
+      </label>
     </div>
-
+  
     <div>
-        <label class="sum">
-            <span>MIN GPA</span>
-            <span>MAX GPA</span>
-            <span>AVG GPA</span>            
-        </label>
+      <label class="sum">
+        <span>MIN GPA: {{ calculateMinMaxAvgGPA().min }}</span>
+        <span>MAX GPA: {{ calculateMinMaxAvgGPA().max }}</span>
+        <span>AVG GPA: {{ calculateMinMaxAvgGPA().avg.toFixed(2) }}</span>
+      </label>
     </div>
-    <button class="submit" (click)="goToScore()" >Score</button>
+    <button class="submit" (click)="goToScore()">Score</button>
   </div>
   
-
-
