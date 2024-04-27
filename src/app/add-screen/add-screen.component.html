@@ -3,20 +3,20 @@
     <p class="title"> Student GPAs</p>
   </div>
     <label>
-      <input class="input" type="text" placeholder=""> 
+      <input class="input" type="text" [(ngModel)]="name"(input)="checkName()"> 
       <span>Name</span>
     </label>
   
     <label>
-      <input class="input" type="number" placeholder="">
+      <input class="input" type="number" [(ngModel)]="collectScore"(input)="checkCollectScore()">
       <span>Collect score (Max:30)</span>
     </label>
   
     <label>
-      <input class="input" type="number" placeholder="">
+      <input class="input" type="number" [(ngModel)]="testScore"(input)="checkTestScore()" placeholder="">
       <span>Test score (Max:70)</span>
     </label>
   
-    <button class="submit">ADD</button>
+    <button class="submit" [disabled]="!isValidScores()" (click)="addScores()">ADD</button>
   </div>
   
